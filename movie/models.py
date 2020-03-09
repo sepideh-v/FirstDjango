@@ -12,7 +12,7 @@ class Genre(models.Model):
 class Movie(models.Model):
     id = models.BigIntegerField
     title = models.CharField(max_length=70)
-    genreId = models.IntegerField(db_column='genre_id')
+    genre = models.ForeignKey(Genre, on_delete=models.CASCADE)
     createdAt = models.DateTimeField(auto_now_add=True, editable=False, db_column='created_at')
 
     class Meta:

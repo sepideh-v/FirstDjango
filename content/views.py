@@ -88,7 +88,8 @@ class ContentViewSet(viewsets.ModelViewSet):
         context = {'request': request}
 
         queryset = self.get_queryset()
-        page = self.paginate_queryset(self.filter_queryset(queryset))
+        queryset = self.filter_queryset(queryset)
+        page = self.paginate_queryset(queryset)
         if page is not None:
             serializer = ContentSerializer(page, many=True, context=context)
             return self.get_paginated_response(serializer.data)

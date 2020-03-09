@@ -3,16 +3,26 @@ from rest_framework import serializers
 from movie.models import Genre, Movie
 
 
-class GenreSerializer(serializers.HyperlinkedModelSerializer):
+class GenreSerializer(serializers.ModelSerializer):
+
     class Meta:
         model = Genre
         fields = ['id', 'title']
 
 
-class MovieSerializer(serializers.HyperlinkedModelSerializer):
+class MovieSerializer(serializers.ModelSerializer):
     title = serializers.CharField(required=True)
-    genreId = serializers.IntegerField(required=True)
+    genre = GenreSerializer(read_only=True)
 
     class Meta:
         model = Movie
-        fields = ['id', 'title', 'genreId', 'createdAt']
+        fields = ['id', 'title', 'genre', 'createdAt']
+
+
+class MovieListSerializer(serializers.ModelSerializer):
+    title = serializers.CharField(required=True)
+    genreId = serializers.PrimaryKeyRelatedField(source='genre', read_only=True)
+
+    class Meta:
+        model = Movie
+        fields = ['id', 'title', 'createdAt', 'genreId']

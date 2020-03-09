@@ -1,3 +1,4 @@
+from django.db import connection
 from django.http import Http404
 from django.shortcuts import render, get_object_or_404
 from django_filters.rest_framework import DjangoFilterBackend
@@ -6,6 +7,7 @@ from rest_framework.pagination import LimitOffsetPagination
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
+from movie.filters import MovieFilter
 from movie.models import Genre, Movie
 from movie.serializers import GenreSerializer, MovieSerializer
 
@@ -70,7 +72,8 @@ class MovieViewSet(viewsets.ModelViewSet):
     permission_classes = (IsAuthenticated,)
     pagination_class = LimitOffsetPagination
     filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['title', 'genreId']
+    filterset_fields = ['id', 'title', 'genre__id', 'genre__title']
+    # filter_class = MovieFilter
 
     def get_queryset(self):
         return Movie.objects.filter()
@@ -87,14 +90,18 @@ class MovieViewSet(viewsets.ModelViewSet):
     def list(self, request, *args, **kwargs):
         context = {'request': request}
 
-        queryset = self.get_queryset()
+        queryset = self.get_queryset().prefetch_related('genre')
+        queryset = self.filter_queryset(queryset)
         page = self.paginate_queryset(self.filter_queryset(queryset))
         if page is not None:
             serializer = MovieSerializer(page, many=True, context=context)
+            print(connection.queries)
             return self.get_paginated_response(serializer.data)
         else:
             serializer = MovieSerializer(queryset, many=True, context=context)
-            return Response(serializer.data)
+            data = serializer.data
+            print(connection.queries)
+            return Response(data)
 
     def retrieve(self, request, pk=None, **kwargs):
         context = {'request': request}
