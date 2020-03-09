@@ -92,7 +92,7 @@ class MovieViewSet(viewsets.ModelViewSet):
 
         queryset = self.get_queryset().prefetch_related('genre')
         queryset = self.filter_queryset(queryset)
-        page = self.paginate_queryset(self.filter_queryset(queryset))
+        page = self.paginate_queryset(queryset)
         if page is not None:
             serializer = MovieSerializer(page, many=True, context=context)
             print(connection.queries)
