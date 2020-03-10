@@ -1,4 +1,8 @@
+from django.db import connection
 from django.shortcuts import get_object_or_404
+from django.utils.decorators import method_decorator
+from django.views.decorators.cache import cache_page
+from django.views.decorators.vary import vary_on_cookie
 from rest_framework import viewsets, status
 from rest_framework.decorators import action
 from rest_framework.permissions import AllowAny, IsAuthenticated
@@ -36,13 +40,19 @@ class UserViewSet(viewsets.ModelViewSet):
             # action is not set return default permission_classes
             return [permission() for permission in self.permission_classes]
 
+    @method_decorator(cache_page(60 * 60 * 2))
+    @method_decorator(vary_on_cookie)
     def list(self, request, *args, **kwargs):
         context = {'request': request}
 
         queryset = self.get_queryset()
         serializer = UserSerializer(queryset, many=True, context=context)
-        return Response(serializer.data)
+        data = serializer.data
+        print(connection.queries)
+        return Response(data)
 
+    @method_decorator(cache_page(60 * 60 * 2))
+    @method_decorator(vary_on_cookie)
     def retrieve(self, request, pk=None, **kwargs):
         context = {'request': request}
 
@@ -59,6 +69,8 @@ class UserViewSet(viewsets.ModelViewSet):
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
+    @method_decorator(cache_page(60 * 60 * 2))
+    @method_decorator(vary_on_cookie)
     def partial_update(self, request, *args, **kwargs):
         instance = self.get_object()
         serializer = UserSerializer(instance, data=request.data, partial=True)

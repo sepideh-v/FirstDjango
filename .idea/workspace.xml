@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7ba8fbd9-0c07-44f0-bf88-cf8baeae5a3a" name="Default Changelist" comment="" />
+    <list default="true" id="7ba8fbd9-0c07-44f0-bf88-cf8baeae5a3a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DrfProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/DrfProject/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie/filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/movie/filters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/movie/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movie/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/movie/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/views.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +28,16 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="D:\Sepideh\Django\FirstDjango\.idea" />
+      </set>
+    </option>
+  </component>
   <component name="ProjectId" id="1YcvJQK9bpgYOm0QYSKqk6WiZc9" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -28,8 +46,9 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Jwt" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Apache Derby" />
   </component>
   <component name="RunManager">
@@ -80,6 +99,10 @@
       <workItem from="1583569328671" duration="13768000" />
       <workItem from="1583650856243" duration="1918000" />
       <workItem from="1583668842327" duration="9065000" />
+      <workItem from="1583736759110" duration="18347000" />
+      <workItem from="1583822216250" duration="11588000" />
+      <workItem from="1583838892452" duration="686000" />
+      <workItem from="1583841650354" duration="3394000" />
     </task>
     <servers />
   </component>
@@ -99,22 +122,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1583423043581" />
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1583690442586">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1583844520071">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1583690442586" />
-    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1583690442586">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1583844520071" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1583844520071">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1583690442586" />
-    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1583690442586">
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1583844520071" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1583844520071">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1583690442586" />
-    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1583690442586">
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1583844520071" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1583844520071">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1583690442586" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1583844520071" />
     <state width="1323" height="223" key="GridCell.Tab.1.bottom" timestamp="1583324054778">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -135,13 +158,17 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="6" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1583423358941" />
+    <state x="492" y="280" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583754586881">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="492" y="280" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1583754586881" />
     <state x="424" y="7" key="refactoring.ChangeSignatureDialog" timestamp="1583340759555">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="424" y="7" key="refactoring.ChangeSignatureDialog/0.0.1366.728@0.0.1366.728" timestamp="1583340759555" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1583689689530">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1583756365075">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1583689689530" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1583756365075" />
   </component>
 </project>

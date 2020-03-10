@@ -1,6 +1,9 @@
 from django.db import connection
 from django.http import Http404
 from django.shortcuts import render, get_object_or_404
+from django.utils.decorators import method_decorator
+from django.views.decorators.cache import cache_page
+from django.views.decorators.vary import vary_on_cookie
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import viewsets, status
 from rest_framework.pagination import LimitOffsetPagination
@@ -87,6 +90,8 @@ class MovieViewSet(viewsets.ModelViewSet):
             queryset = backend().filter_queryset(self.request, queryset, view=self)
         return queryset
 
+    @method_decorator(cache_page(60 * 60 * 2))
+    @method_decorator(vary_on_cookie)
     def list(self, request, *args, **kwargs):
         context = {'request': request}
 
